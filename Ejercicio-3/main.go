@@ -15,18 +15,20 @@ type producto struct {
 	Precio         float64
 }
 
+type tienda struct {
+	listaDeProductos []producto
+}
+
 const (
 	Pequeño = "Pequeño"
 	Mediano = "Mediano"
 	Grande  = "Grande"
 )
 
-type tienda struct {
-	listaDeProductos []producto
-}
-
 func main() {
-
+	tienda := nuevaTienda()
+	prod := nuevoProducto(Mediano, "Playstation 5", 2000000.0)
+	tienda.Agregar(prod)
 }
 
 func nuevoProducto(tipoDeProducto string, nombre string, precio float64) producto {
